@@ -2,7 +2,7 @@ const items = [
   {
     day: "01",
     title: "JavaScript Drum Kit",
-    code: "https://github.com/MHchihuahua/JavaScript30/tree/main/01%20-%20JavaScript%20Drum%20Kit",
+    code: "https://github.com/MHchihuahua/JavaScript30/tree/main/01",
     imgSrc: "images/01.png",
   },
   {
@@ -218,7 +218,7 @@ function createItem(day, title, code, imgSrc) {
   clone.querySelector(".item-day").textContent = `Day ${day}`;
   clone.querySelector(".item-title").textContent = title;
   clone.querySelector(".item-code").href = code;
-  clone.querySelector(".item-demo").href = `${day}.html`;
+  clone.querySelector(".item-demo").href = day;
   const img = clone.querySelector(".item-image");
 
   if (!imgSrc) {
