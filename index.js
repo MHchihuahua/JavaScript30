@@ -2,8 +2,8 @@ const items = [
   {
     day: "01",
     title: "JavaScript Drum Kit",
-    code: "link1.html",
-    demo: "link2.html",
+    code: "code.html",
+    demo: "demo.html",
     imgSrc: "images/01.png",
   },
   {
