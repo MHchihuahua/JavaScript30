@@ -8,14 +8,13 @@
       href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap"
       rel="stylesheet"
     />
-
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style>
+      * {
+        font-family: "Comfortaa", serif;
+      }
+    </style>
   </head>
-  <style>
-    * {
-      font-family: "Comfortaa", serif;
-    }
-  </style>
   <body
     class="h-auto m-0 p-0 flex flex-col items-center bg-gradient-to-t from-blue-100 to-purple-100"
   >
@@ -30,7 +29,6 @@
         class="item bg-stone-50 shadow-md rounded-lg transition-all duration-300 hover:ring-4 hover:ring-purple-400 hover:shadow-lg"
       >
         <a class="item-demo block">
-          <!-- 加入 block 確保 a 標籤佔滿空間 -->
           <div class="relative">
             <img
               class="item-image rounded-t-lg w-full aspect-video object-cover"

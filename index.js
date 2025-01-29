@@ -2,8 +2,7 @@ const items = [
   {
     day: "01",
     title: "JavaScript Drum Kit",
-    code: "code.html",
-    demo: "demo.html",
+    code: "https://github.com/MHchihuahua/JavaScript30/tree/main/01%20-%20JavaScript%20Drum%20Kit",
     imgSrc: "images/01.png",
   },
   {
@@ -211,7 +210,7 @@ const items = [
   },
 ];
 
-function createItem(day, title, code, demo, imgSrc) {
+function createItem(day, title, code, imgSrc) {
   const template = document.getElementById("item-template");
   const clone = template.content.cloneNode(true);
   const defaultImage = "images/default.png";
@@ -219,7 +218,7 @@ function createItem(day, title, code, demo, imgSrc) {
   clone.querySelector(".item-day").textContent = `Day ${day}`;
   clone.querySelector(".item-title").textContent = title;
   clone.querySelector(".item-code").href = code;
-  clone.querySelector(".item-demo").href = demo;
+  clone.querySelector(".item-demo").href = `${day}.html`;
   const img = clone.querySelector(".item-image");
 
   if (!imgSrc) {
@@ -240,13 +239,7 @@ function renderItems() {
   const fragment = document.createDocumentFragment();
 
   items.forEach((item) => {
-    const element = createItem(
-      item.day,
-      item.title,
-      item.code,
-      item.demo,
-      item.imgSrc
-    );
+    const element = createItem(item.day, item.title, item.code, item.imgSrc);
     fragment.appendChild(element);
   });
 
