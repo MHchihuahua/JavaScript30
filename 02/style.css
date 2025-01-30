@@ -1,0 +1,80 @@
+html {
+  background-image: url(https://images.unsplash.com/photo-1520214506452-92aa5defe1b3?q=80&w=1826&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-size: cover;
+  text-align: center;
+  font-family: "Share Tech Mono", serif;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.clock {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  position: relative;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 0 80px rgba(255, 255, 255, 0.4),
+    inset 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.clock-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.clock-dot {
+  width: 4%;
+  height: 4%;
+  background: oklch(0.922 0 0);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+  z-index: 2;
+}
+
+.hand {
+  width: 50%;
+  height: 6px;
+  position: absolute;
+  top: 50%;
+  transform-origin: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+}
+
+.hour-hand {
+  width: 25%;
+  background: oklch(0.922 0 0);
+  left: 25%;
+  height: 8px;
+}
+
+.min-hand {
+  background: oklch(0.922 0 0);
+  height: 6px;
+}
+
+.second-hand {
+  background: oklch(0.673 0.182 276.935);
+  height: 2px;
+}
+
+.time-text {
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+}
