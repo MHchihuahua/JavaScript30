@@ -57,17 +57,24 @@
     <audio data-key="KeyL" src="sounds/tink.wav"></audio>
 
     <script>
-      const keys = document.querySelectorAll(".key");
       const audioElements = {};
-      document.querySelectorAll("audio[data-key]").forEach((audio) => {
+      const keyElements = {};
+
+      const keys = document.querySelectorAll(".key");
+      keys.forEach((key) => {
+        keyElements[key.dataset.key] = key;
+      });
+
+      const audios = document.querySelectorAll("audio[data-key]");
+      audios.forEach((audio) => {
         audioElements[audio.dataset.key] = audio;
       });
 
       const playSound = (e) => {
         const audio = audioElements[e.code];
-        const key = document.querySelector(`.key[data-key="${e.code}"]`);
+        const key = keyElements[e.code];
 
-        if (!audio) return;
+        if (!audio || !key) return;
 
         audio.currentTime = 0;
         audio.play();
@@ -80,10 +87,11 @@
         }
       };
 
+      document
+        .querySelector(".keys")
+        .addEventListener("transitionend", removeTransition);
+
       window.addEventListener("keydown", playSound);
-      keys.forEach((key) =>
-        key.addEventListener("transitionend", removeTransition)
-      );
     </script>
   </body>
 </html>
