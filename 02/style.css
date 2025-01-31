@@ -6,25 +6,25 @@ html {
 }
 
 body {
-  min-height: 100vh;
   margin: 0;
   font-size: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
 .clock {
-  width: 20rem;
-  height: 20rem;
+  width: 45vmin;
+  height: 45vmin;
   border-radius: 50%;
   position: relative;
   padding: 2rem;
   margin: 2rem 0;
-  box-shadow: 0 0 80px rgba(255, 255, 255, 0.4),
-    inset 0 0 10px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 5rem rgba(255, 255, 255, 0.4),
+    inset 0 0 1rem rgba(255, 255, 255, 0.2);
 }
 
 .clock-face {
@@ -34,47 +34,65 @@ body {
 }
 
 .clock-dot {
-  width: 4%;
-  height: 4%;
+  width: 5%;
+  height: 5%;
   background: oklch(0.922 0 0);
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 1rem rgba(255, 255, 255, 0.3),
+    inset 0 0 1rem rgba(0, 0, 0, 0.2);
   z-index: 2;
 }
 
 .hand {
   width: 50%;
-  height: 6px;
+  height: 0.8vmin;
   position: absolute;
   top: 50%;
   transform-origin: 100%;
   border-radius: 10px;
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
 }
 
 .hour-hand {
-  width: 25%;
+  width: 30%;
+  height: 1.2vmin;
   background: oklch(0.922 0 0);
-  left: 25%;
-  height: 8px;
+  left: 20%;
 }
 
 .min-hand {
+  width: 45%;
+  height: 1vmin;
   background: oklch(0.922 0 0);
-  height: 6px;
+  left: 5%;
 }
 
 .second-hand {
+  width: 50%;
+  height: 0.5vmin;
   background: oklch(0.673 0.182 276.935);
-  height: 2px;
 }
 
 .time-text {
   color: white;
   font-size: 3rem;
   font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .clock {
+    width: 50vmin;
+    height: 50vmin;
+  }
+
+  .hand {
+    height: 1vmin;
+  }
+
+  .time-text {
+    font-size: 1.5rem;
+  }
 }
