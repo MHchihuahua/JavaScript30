@@ -30,7 +30,7 @@
 
       function setDate() {
         const now = new Date();
-        const seconds = now.getSeconds() + now.getMilliseconds() / 1000;
+        const seconds = now.getSeconds();
         const minutes = now.getMinutes() + seconds / 60;
         const hours = now.getHours() + minutes / 60;
 
@@ -49,11 +49,14 @@
           .getMinutes()
           .toString()
           .padStart(2, "0")}:${now.getSeconds().toString().padStart(2, "0")}`;
-
-        requestAnimationFrame(setDate);
       }
 
-      setDate();
+      function updateClock() {
+        setDate();
+        requestAnimationFrame(updateClock);
+      }
+
+      updateClock();
     </script>
   </body>
 </html>
