@@ -14,10 +14,12 @@ const items = [
   {
     day: "03",
     title: "Playing with CSS Variables and JS",
+    note: "CSS Variables, data-* Attributes",
   },
   {
     day: "04",
     title: "Array Cardio Day 1",
+    note: "Array methods - filter, map, sort, reduce",
   },
   {
     day: "05",
