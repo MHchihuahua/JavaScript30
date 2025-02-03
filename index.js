@@ -24,6 +24,7 @@ const items = [
   {
     day: "05",
     title: "Flex Panels Image Gallery",
+    note: "CSS Flexbox",
   },
   {
     day: "06",
