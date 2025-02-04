@@ -29,6 +29,7 @@ const items = [
   {
     day: "06",
     title: "AJAX Type Ahead",
+    note: "fetch, RegExp",
   },
   {
     day: "07",
