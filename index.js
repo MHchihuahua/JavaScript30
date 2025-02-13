@@ -34,6 +34,7 @@ const items = [
   {
     day: "07",
     title: "Array Cardio Day 2",
+    note: "Array methods - some, every, find, findIndex",
   },
   {
     day: "08",
