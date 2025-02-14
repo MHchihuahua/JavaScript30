@@ -39,6 +39,7 @@ const items = [
   {
     day: "08",
     title: "Fun with HTML5 Canvas",
+    note: "HTML5 Canvas",
   },
   {
     day: "09",

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HTML5 Canvas</title>
+    <link rel="icon" href="https://fav.farm/✅" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <span>HTML5 Canvas</span>
+      <canvas id="draw"></canvas>
+    </div>
+    <script>
+      const canvas = document.getElementById("draw");
+      const ctx = canvas.getContext("2d");
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight - 150;
+      ctx.lineWidth = 5;
+      ctx.lineJoin = "round";
+      ctx.lineCap = "round";
+
+      let isPainting = false;
+      let prevX = 0;
+      let prevY = 0;
+      let hueValue = 0;
+      let isIncreasingWidth = true;
+
+      const paint = (e) => {
+        if (!isPainting) return;
+
+        ctx.strokeStyle = `hsl(${hueValue}, 100%, 50%)`;
+        ctx.beginPath();
+        ctx.moveTo(prevX, prevY);
+        ctx.lineTo(e.offsetX, e.offsetY);
+        ctx.stroke();
+        [prevX, prevY] = [e.offsetX, e.offsetY];
+        hueValue = (hueValue + 1) % 360;
+
+        if (ctx.lineWidth >= 50 || ctx.lineWidth < 5) {
+          isIncreasingWidth = !isIncreasingWidth;
+        }
+
+        isIncreasingWidth ? ctx.lineWidth++ : ctx.lineWidth--;
+      };
+
+      const stopPainting = () => (isPainting = false);
+
+      canvas.addEventListener("mousemove", paint);
+      canvas.addEventListener("mousedown", (e) => {
+        isPainting = true;
+        [prevX, prevY] = [e.offsetX, e.offsetY];
+      });
+      canvas.addEventListener("mouseup", stopPainting);
+      canvas.addEventListener("mouseout", stopPainting);
+    </script>
+  </body>
+</html>
