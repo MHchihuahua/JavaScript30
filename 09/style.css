@@ -1,0 +1,85 @@
+body {
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #e0eafc, #cfdef3);
+  color: #333;
+  font-family: "Fira Code", monospace;
+  height: auto;
+  margin: 0;
+  padding: 24px 0;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.trick-card {
+  width: 40%;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 16px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: 0.3s ease;
+}
+
+.trick-card:hover {
+  border: 1px solid #aaa;
+}
+
+h1 {
+  padding: 24px 0;
+  font-size: 36px;
+  text-align: center;
+  margin: 0;
+}
+
+h2 {
+  font-size: 24px;
+  margin: 8px 0;
+}
+
+p {
+  margin: 5px 0;
+  text-align: justify;
+}
+
+pre {
+  background: #272822;
+  color: #f8f8f2;
+  padding: 16px;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+.run-button {
+  font-family: "Fira Code", monospace;
+  padding: 12px 8px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.run-button:hover {
+  background: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .trick-card {
+    width: 80%;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+}

@@ -43,7 +43,8 @@ const items = [
   },
   {
     day: "09",
-    title: "14 Must Know Dev Tools Tricks",
+    title: "13 Must Know Dev Tools Tricks",
+    note: "The console object",
   },
   {
     day: "10",
