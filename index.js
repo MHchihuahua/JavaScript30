@@ -49,6 +49,7 @@ const items = [
   {
     day: "10",
     title: "Hold Shift to Check Multiple Checkboxes",
+    note: "Checkbox, shift key",
   },
   {
     day: "11",
