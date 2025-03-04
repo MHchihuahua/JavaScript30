@@ -54,6 +54,7 @@ const items = [
   {
     day: "11",
     title: "Custom HTML5 Video Player",
+    note: "HTML5 Video",
   },
   {
     day: "12",
